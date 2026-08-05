@@ -1,0 +1,47 @@
+{
+  "name": "rocketchat-mcp-local",
+  "version": "0.3.0",
+  "description": "Local fork of rocket-chat-mcp with room announcement get/list/set tools",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "rocketchat-mcp-local": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "find src -name '*.test.ts' -print0 | xargs -0 node --import tsx --test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rocket-chat",
+    "rocketchat",
+    "claude",
+    "anthropic",
+    "stdio"
+  ],
+  "author": "k1sina",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "private": true
+}
