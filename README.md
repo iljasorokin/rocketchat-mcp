@@ -1,6 +1,6 @@
 # rocketchat-mcp (local)
 
-Local fork of [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) for Cursor → https://rc.upzero.net
+Local fork of [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) for Cursor.
 
 Adds room **announcement** tools (banner on channel/group), not just chat history.
 
@@ -22,11 +22,20 @@ Adds room **announcement** tools (banner on channel/group), not just chat histor
 
 ## Auth
 
-`~/.rocketchat-mcp/env` (`ROCKETCHAT_URL`, `ROCKETCHAT_USER_ID`, `ROCKETCHAT_AUTH_TOKEN`).
+`~/.rocketchat-mcp/env` (or env vars):
+
+- `ROCKETCHAT_URL` — base URL, e.g. `https://chat.example.com` (**required**, no built-in default)
+- `ROCKETCHAT_USER_ID`
+- `ROCKETCHAT_AUTH_TOKEN`
+
+Or macOS Keychain: service `rocketchat-mcp`, accounts `user-id` / `auth-token`.
+
+Do **not** commit tokens or `*.env` files.
 
 ## Run
 
 ```bash
+export ROCKETCHAT_URL="https://chat.example.com"
 ./run.sh
 ```
 

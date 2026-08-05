@@ -1,6 +1,6 @@
 # rocketchat-mcp (локальный)
 
-Локальный форк [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) для Cursor → https://rc.upzero.net
+Локальный форк [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) для Cursor.
 
 Добавляет tools для **объявлений** комнаты (баннер канала/группы), а не только историю чата.
 
@@ -29,17 +29,20 @@
 
 ## Авторизация
 
-Файл `~/.rocketchat-mcp/env`:
+Файл `~/.rocketchat-mcp/env` (или переменные окружения):
 
-- `ROCKETCHAT_URL` (по умолчанию в `run.sh`: `https://rc.upzero.net`)
+- `ROCKETCHAT_URL` — базовый URL, напр. `https://chat.example.com` (**обязателен**, встроенного дефолта нет)
 - `ROCKETCHAT_USER_ID`
 - `ROCKETCHAT_AUTH_TOKEN`
 
 Либо macOS Keychain: service `rocketchat-mcp`, accounts `user-id` / `auth-token`.
 
+Токены и `*.env` **не** коммитить.
+
 ## Запуск
 
 ```bash
+export ROCKETCHAT_URL="https://chat.example.com"
 ./run.sh
 ```
 

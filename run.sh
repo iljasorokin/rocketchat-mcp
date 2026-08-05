@@ -19,7 +19,13 @@ if [[ -z "${ROCKETCHAT_AUTH_TOKEN:-}" || -z "${ROCKETCHAT_USER_ID:-}" ]] && [[ "
   export ROCKETCHAT_AUTH_TOKEN ROCKETCHAT_USER_ID
 fi
 
-export ROCKETCHAT_URL="${ROCKETCHAT_URL:-https://rc.upzero.net}"
+export ROCKETCHAT_URL="${ROCKETCHAT_URL:-}"
+
+if [[ -z "${ROCKETCHAT_URL:-}" ]]; then
+  echo "rocketchat-mcp: missing ROCKETCHAT_URL" >&2
+  echo "Set in $ENV_FILE or env (e.g. https://chat.example.com)." >&2
+  exit 1
+fi
 
 if [[ -z "${ROCKETCHAT_USER_ID:-}" || -z "${ROCKETCHAT_AUTH_TOKEN:-}" ]]; then
   echo "rocketchat-mcp: missing ROCKETCHAT_USER_ID / ROCKETCHAT_AUTH_TOKEN" >&2
