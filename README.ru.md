@@ -37,7 +37,7 @@
 
 Либо macOS Keychain: service `rocketchat-mcp`, accounts `user-id` / `auth-token`.
 
-Токены и `*.env` **не** коммитить.
+Токены и `*.env` **не** коммитить. См. [SECURITY.md](./SECURITY.md).
 
 ## Запуск
 
