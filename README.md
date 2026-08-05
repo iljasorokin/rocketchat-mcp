@@ -30,7 +30,7 @@ Adds room **announcement** tools (banner on channel/group), not just chat histor
 
 Or macOS Keychain: service `rocketchat-mcp`, accounts `user-id` / `auth-token`.
 
-Do **not** commit tokens or `*.env` files.
+Do **not** commit tokens or `*.env` files. See [SECURITY.md](./SECURITY.md).
 
 ## Run
 
