@@ -4,6 +4,8 @@ Local fork of [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp)
 
 Adds room **announcement** tools (banner on channel/group), not just chat history.
 
+Русская документация: [README.ru.md](./README.ru.md).
+
 ## Tools
 
 | Tool | Purpose |
