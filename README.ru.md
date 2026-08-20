@@ -2,7 +2,7 @@
 
 Локальный форк [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) для Cursor.
 
-Добавляет tools для **объявлений** комнаты (баннер канала/группы), а не только историю чата.
+Добавляет tools для **объявлений** комнаты и **чтения тредов** (`get_thread_messages`, `get_message`).
 
 Английская версия: [README.md](./README.md).
 
@@ -16,6 +16,8 @@
 | `search_messages` | Поиск сообщений в комнате |
 | `get_user` | Пользователь по username |
 | `post_message` | Отправить сообщение |
+| `get_thread_messages` | Хвост треда по id корня (`tail` / `include_root`) |
+| `get_message` | Одно сообщение + реакции |
 | `get_room_info` | Мета комнаты: **announcement**, topic, description |
 | `list_announcements` | Все joined-каналы/группы с непустым объявлением |
 | `set_room_announcement` | **Запись:** установить/очистить объявление (`confirm: true`, нужно право `edit-room`) |

@@ -2,7 +2,7 @@
 
 Local fork of [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) for Cursor.
 
-Adds room **announcement** tools (banner on channel/group), not just chat history.
+Adds room **announcement** tools and **thread read** tools (`get_thread_messages`, `get_message`).
 
 Русская документация: [README.ru.md](./README.ru.md).
 
@@ -16,6 +16,8 @@ Adds room **announcement** tools (banner on channel/group), not just chat histor
 | `search_messages` | Search in a room |
 | `get_user` | User by username |
 | `post_message` | Send a message |
+| `get_thread_messages` | Thread replies by root id (`tail` / `include_root`) |
+| `get_message` | One message + reactions |
 | `get_room_info` | Room meta: **announcement**, topic, description |
 | `list_announcements` | All joined channels/groups with non-empty announcement |
 | `set_room_announcement` | **Write:** set/clear announcement (`confirm: true`, needs `edit-room`) |
