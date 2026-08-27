@@ -13,6 +13,7 @@ import { listAnnouncements, listAnnouncementsDescription, listAnnouncementsInput
 import { setRoomAnnouncement, setRoomAnnouncementDescription, setRoomAnnouncementInputShape } from "./tools/set-room-announcement.js";
 import { getThreadMessages, getThreadMessagesDescription, getThreadMessagesInputShape } from "./tools/get-thread-messages.js";
 import { getMessage, getMessageDescription, getMessageInputShape } from "./tools/get-message.js";
+import { setReaction, setReactionDescription, setReactionInputShape } from "./tools/set-reaction.js";
 
 function readEnv() {
   const url = process.env.ROCKETCHAT_URL?.trim();
@@ -49,7 +50,7 @@ async function main() {
 
   const server = new McpServer({
     name: "rocketchat-mcp-local",
-    version: "0.4.0",
+    version: "0.5.0",
   });
 
   function ok(data) {
@@ -69,6 +70,7 @@ async function main() {
   server.registerTool("set_room_announcement", { description: setRoomAnnouncementDescription, inputSchema: setRoomAnnouncementInputShape }, async (input) => ok(await setRoomAnnouncement(client, input)));
   server.registerTool("get_thread_messages", { description: getThreadMessagesDescription, inputSchema: getThreadMessagesInputShape }, async (input) => ok(await getThreadMessages(client, input)));
   server.registerTool("get_message", { description: getMessageDescription, inputSchema: getMessageInputShape }, async (input) => ok(await getMessage(client, input)));
+  server.registerTool("set_reaction", { description: setReactionDescription, inputSchema: setReactionInputShape }, async (input) => ok(await setReaction(client, input)));
 
   const transport = new StdioServerTransport();
   await server.connect(transport);

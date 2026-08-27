@@ -1,7 +1,7 @@
 {
   "name": "rocketchat-mcp-local",
-  "version": "0.4.0",
-  "description": "Local fork of rocket-chat-mcp with room announcement and thread read tools",
+  "version": "0.5.0",
+  "description": "Local fork of rocket-chat-mcp with announcements, threads, and message reactions",
   "type": "module",
   "main": "dist/index.js",
   "bin": {

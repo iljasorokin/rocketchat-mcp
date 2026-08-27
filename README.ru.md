@@ -2,7 +2,7 @@
 
 Локальный форк [`rocket-chat-mcp`](https://www.npmjs.com/package/rocket-chat-mcp) для Cursor.
 
-Добавляет tools для **объявлений** комнаты и **чтения тредов** (`get_thread_messages`, `get_message`).
+Добавляет tools для **объявлений** комнаты, **чтения тредов** (`get_thread_messages`, `get_message`) и **реакций** (`set_reaction`).
 
 Английская версия: [README.md](./README.md).
 
@@ -16,11 +16,18 @@
 | `search_messages` | Поиск сообщений в комнате |
 | `get_user` | Пользователь по username |
 | `post_message` | Отправить сообщение |
+| `set_reaction` | **Запись:** поставить/снять emoji-реакцию на сообщение (`chat.react`) |
 | `get_thread_messages` | Хвост треда по id корня (`tail` / `include_root`) |
 | `get_message` | Одно сообщение + реакции |
 | `get_room_info` | Мета комнаты: **announcement**, topic, description |
 | `list_announcements` | Все joined-каналы/группы с непустым объявлением |
 | `set_room_announcement` | **Запись:** установить/очистить объявление (`confirm: true`, нужно право `edit-room`) |
+
+### Реакции
+
+- `set_reaction`: `message_id` + `emoji` (shortname, с двоеточиями или без: `eyes` / `:eyes:`).
+- `should_react` по умолчанию `true` (добавить); `false` — снять реакцию текущего пользователя. Всегда setter (не toggle), чтобы ретраи были идемпотентны.
+- Читать реакции: `get_message` / `get_thread_messages` / `get_room_history`.
 
 ### Объявления (announcement)
 
